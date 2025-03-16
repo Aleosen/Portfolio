@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+html {
+    scroll-behavior: smooth;
+} 
+  .constructor {
+    max-width: 1000px;
+  }
+  .pagination {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+ 
+.pagination .page-num {
+    padding: 15px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+  }
+  
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  .pagination button.active {
+    background-color: #d6d6d6;
+    color: rgb(0, 0, 0);
+  }
+  header a {
+    text-decoration: none;
+    color:black;
+  }
