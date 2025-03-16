@@ -2,17 +2,42 @@ import React from 'react'
 import { useState } from 'react'
 import ProjectCard from './ProjectCard'
 import cards from '../data/cards.json'
+import './Table.css'
 export default function PortfolioTable() {
-    const [selectedValue, setSelectedValue] = useState('0')
-    const filteredValues = Object.values(cards).filter(item => selectedValue==='0' || item.category==selectedValue)
+    // const [selectedValue, setSelectedValue] = useState('0')
+    const options = ['All', 'Web', 'Mobile', 'Pet']  
+    const [isOpen, setIsOpen] = useState(false)
+    const [selectedItems, setSelectedItems] = useState(['All'])
+    const filteredValues = Object.values(cards).filter(item => selectedItems.includes(item.category) || selectedItems.includes('All'))
     const [currentPage, setCurrentPage] = useState(1)
     const [cardsPerPages] = useState(6)
+    
 
     const indexOfTheLastCard = currentPage*cardsPerPages
     const indexOfTheFirstCard = indexOfTheLastCard - cardsPerPages
     const currentCards = filteredValues.slice(indexOfTheFirstCard, indexOfTheLastCard)
     const totalPages= Math.ceil(filteredValues.length/cardsPerPages)
-    
+
+
+    const handleCheckboxChange = (option) => {
+      if (selectedItems.includes(option)) {
+        // Если элемент уже выбран, удаляем его
+        if(selectedItems.length>1)
+          setSelectedItems(selectedItems.filter((item) => item !== option));
+      } else {
+        // Если элемент не выбран, добавляем его
+        if(option==='All'){
+          setSelectedItems([option]);
+        } else {
+          setSelectedItems(selectedItems.filter(item => item!=='All').concat(option))
+          if(selectedItems.length===2){
+            console.log(selectedItems)
+            setSelectedItems(['All'])
+          }
+          }
+      }
+    };
+
     const renderPageNumbers = () => {
       const pages = [];
       for (let i = 1; i <= totalPages; i++) {
@@ -28,17 +53,46 @@ export default function PortfolioTable() {
       }
       return pages;
     };
+
+  const handleClickOutside = (e) => {
+    if (!e.target.closest(".dropdown")) {
+      setIsOpen(false);
+    }
+  };
+
+
+  React.useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
-    <div className='constructor mx-auto h-screen select-none relative'>
-        <form className='my-[40px]'>
+    <div className='constructor relative mx-auto select-none pb-[100px]'>
+        {/* <form className='my-[40px]'>
             <label className="ml-[30px]" for="filters">Filter: </label>
             <select className="rounded-full cursor-pointer" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
                 <option value="0">Everything</option>
                 <option value="1">Web</option>
                 <option value="2">Mobile</option>
             </select>
-        </form>
-    <div className='flex flex-wrap'>
+        </form> */}
+    <div className="dropdown ml-[20px] mb-[20px]">
+      <button className="w-[200px] mt-[20px]" onClick={()=>setIsOpen(!isOpen)}>Filter: {selectedItems.join(", ")}</button>
+      {isOpen && (
+        <div className="dropdown-list">
+          {options.map((option) => (
+            <label key={option} className="dropdown-item">
+              <input
+                type="checkbox"
+                checked={selectedItems.includes(option)}
+                onChange={() => handleCheckboxChange(option)}
+              />
+              {option}
+            </label>
+          ))}
+          </div>)}
+    </div>
+    <div className='max-h-full flex flex-wrap'>
     {currentCards.map(item=>(
         <div key={item.id}>
         <ProjectCard
@@ -50,7 +104,7 @@ export default function PortfolioTable() {
       </div>
     ))}
       </div>
-    <div className="pagination">
+    <div className="pagination flex justify-center mx-auto">
         <button 
           className='rounded-full w-[100px] border-none cursor-pointer'
           onClick={()=>setCurrentPage(currentPage-1)}

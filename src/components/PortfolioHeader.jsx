@@ -1,7 +1,6 @@
 import { useEffect, useState  } from 'react'
 export default function PortfolioHeader() {
   const [scrollPosition, setScrollPosition] = useState(0)
-  console.log(scrollPosition)
 
   useEffect(()=>{
     const handleScroll = () => {

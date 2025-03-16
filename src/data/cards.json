@@ -1,42 +1,42 @@
 {
     "FreeLance" : {
         "id" : 1,
-        "category" : 1,
+        "category" : "Web",
         "name" : "Freelance landing",
         "description": "Simple web site about web developing services",
-        "imageUrl":"../public/freelance.png",
+        "imageUrl":"../public/freelance.PNG",
         "linkUrl":"www.azaza.ru"
     },
     "Portfolio" : {
         "id" : 2,
-        "category" : 2,
+        "category" : "Pet",
         "name" : "Portfolio",
         "description": "Detailed portfolio",
-        "imageUrl":"../public/portfolio.png",
+        "imageUrl":"../public/portfolio.PNG",
         "linkUrl":"www.ahah.ru"
     },
     "FreeLance2" : {
         "id" : 3,
-        "category" : 1,
+        "category" : "Web",
         "name" : "Freelance landing",
         "description": "Simple web site about web developing services",
-        "imageUrl":"../public/freelance.png",
+        "imageUrl":"../public/freelance.PNG",
         "linkUrl":"www.wew.ru"
     },
     "Portfolio2" : {
         "id" : 4,
-        "category" : 2,
+        "category" : "Mobile",
         "name" : "Portfolio",
         "description": "Detailed portfolio",
-        "imageUrl":"../public/portfolio.png",
+        "imageUrl":"../public/portfolio.PNG",
         "linkUrl":"www.daf.ru"
     },
     "FreeLance3" : {
         "id" : 5,
-        "category" : 1,
+        "category" : "Mobile",
         "name" : "Freelance landing",
         "description": "Simple web site about web developing services",
-        "imageUrl":"../public/freelance.png",
+        "imageUrl":"../public/freelance.PNG",
         "linkUrl":"www.azaza.ru"
     },
     "Portfolio3" : {
@@ -44,23 +44,23 @@
         "category" : 2,
         "name" : "Portfolio",
         "description": "Detailed portfolio",
-        "imageUrl":"../public/portfolio.png",
+        "imageUrl":"../public/portfolio.PNG",
         "linkUrl":"www.ahah.ru"
     },
     "FreeLance4" : {
         "id" : 7,
-        "category" : 1,
+        "category" : "Web",
         "name" : "Freelance landing",
         "description": "Simple web site about web developing services",
-        "imageUrl":"../public/freelance.png",
+        "imageUrl":"../public/freelance.PNG",
         "linkUrl":"www.wew.ru"
     },
     "Portfolio4" : {
         "id" : 8,
-        "category" : 2,
+        "category" : "Pet",
         "name" : "Portfolio",
         "description": "Detailed portfolio",
-        "imageUrl":"../public/portfolio.png",
+        "imageUrl":"../public/portfolio.PNG",
         "linkUrl":"www.daf.ru"
     }
 
