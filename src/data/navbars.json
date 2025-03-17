@@ -1,0 +1,23 @@
+{
+    "Main":{
+        "id":1,
+        "name":"Home",
+        "address":"/"
+    },
+    "About me":{
+        "id":2,
+        "name":"About me",
+        "address":"/about"
+    },
+    "Projects":{
+        "id":3,
+        "name":"Projects",
+        "address":"/projects"
+    },
+    "Contacts":{
+        "id":4,
+        "name":"Contacts",
+        "address":"/contacts"
+    }
+
+}

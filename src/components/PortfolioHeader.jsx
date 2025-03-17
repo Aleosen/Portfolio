@@ -20,10 +20,10 @@ export default function PortfolioHeader() {
 
 
   return (
-    <header className='flex min-w-screen min-h-screen justify-center items-center select-none sticky top-0' style={headerStyle}>
-        <div className='m-[40px] opacity-90'>
-            <p className="text-[48px] font-bold mb-4">Aleksandr Kulakov</p>
-            <p className="mb-[20px] text-[32px]">Full-Stack developer.</p>
+    <header className='constructor mx-auto flex items-center select-none sticky top-0' style={headerStyle}>
+        <div className='flex flex-col m-[40px] opacity-90'>
+            <span className="text-[48px] font-bold mb-[10px]">Aleksandr Kulakov</span>
+            <span className="mb-[20px] text-[32px]">Full-Stack developer.</span>
             <div className="text-center mx-auto">
               <a 
               className='max-w-[48px] max-h-[48px] ' 

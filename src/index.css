@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --header-height: 80px; /* Задаём высоту хедера */
+  --header-height: 63px; /* Задаём высоту хедера */
+}
+a {
+  color: inherit; /* Наследует цвет текста от родителя */
+  text-decoration: none; /* Убирает подчёркивание */
 }
 
+a:visited {
+  color: inherit; /* Убирает фиолетовый цвет для посещённых ссылок */
+}
+
+a:active {
+  color: inherit; /* Убирает красный цвет при нажатии */
+}
 html, body, #root {
   margin: 0;
   padding: 0;
@@ -14,14 +25,11 @@ html, body, #root {
   grid-template-rows: auto 1fr; /* Хедер + основное содержание */
 }
 
-.main-content {
-  min-height: calc(100vh - var(--header-height)); /* Учитываем высоту хедера */
-  overflow-y: auto;
-}
+
 
   .constructor {
-    min-height: 90vh;
-    max-width: 1100px;
+    min-height: 86vh;
+    max-width: 1080px;
   }
   .pagination {
     position: absolute; /* Лучше чем absolute для прикрепления */
@@ -31,7 +39,7 @@ html, body, #root {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 20px;
+    padding: 10px;
     z-index: 10;
   }
   

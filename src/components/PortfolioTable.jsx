@@ -67,7 +67,7 @@ export default function PortfolioTable() {
   }, []);
 
   return (
-    <div className='constructor relative mx-auto select-none pb-[100px]'>
+    <div className='constructor relative mx-auto select-none pb-[60px]'>
         {/* <form className='my-[40px]'>
             <label className="ml-[30px]" for="filters">Filter: </label>
             <select className="rounded-full cursor-pointer" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
@@ -76,7 +76,7 @@ export default function PortfolioTable() {
                 <option value="2">Mobile</option>
             </select>
         </form> */}
-    <div className="dropdown ml-[20px] mb-[20px]">
+    <div className="dropdown ml-[20px] mb-[10px]">
       <button className="w-[200px] mt-[20px]" onClick={()=>setIsOpen(!isOpen)}>Filter: {selectedItems.join(", ")}</button>
       {isOpen && (
         <div className="dropdown-list">
@@ -94,14 +94,13 @@ export default function PortfolioTable() {
     </div>
     <div className='max-h-full flex flex-wrap'>
     {currentCards.map(item=>(
-        <div key={item.id}>
-        <ProjectCard
+        <ProjectCard 
+        key={item.id}
         title={item.name}
         description={item.description}
         imageUrl={item.imageUrl}
         linkUrl={item.linkUrl}
       />
-      </div>
     ))}
       </div>
     <div className="pagination flex justify-center mx-auto">

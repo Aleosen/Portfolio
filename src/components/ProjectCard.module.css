@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .projectCard {
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;

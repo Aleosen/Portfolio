@@ -11,7 +11,7 @@ export default function ProjectCard({title, description, imageUrl, linkUrl}) {
       setLikes("../../public/likeUnpressed.svg")
   }
   return (
-    <div className={styles.projectCard + " px-[20px] m-[10px] select-none"}>
+    <div className={styles.projectCard + " sm:mx-auto mx-0 px-[20px] m-[10px] select-none"}>
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
       <h3 className='mb-[20px]'>{title}</h3>
       <p>{description}</p>
